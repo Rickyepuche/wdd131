@@ -5,9 +5,15 @@
         grid-template-columns: minmax(220px, 0.9fr) minmax(220px, 0.9fr);
         gap: 1rem;
     }
+    body{
+        max-width: none;
+    }
+    nav{
+        max-width: none;
+    }
 }
 
-@media (min-width: 769px){
+@media (min-width: 1026px){
     body{
         max-width: none;
     }

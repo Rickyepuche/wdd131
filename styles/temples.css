@@ -62,7 +62,7 @@ nav{
 }
 .navigation a:hover, .navigation a:active{
     border: 1px solid black;
-    color: white;
+    color: darkcyan;
     font-weight: 700;
 }
 .open a{
@@ -110,8 +110,11 @@ figcaption{
 
 
 footer{
+    min-width: 250px;
     margin-top: 20px;
-    padding: 20px 10px 30px 70px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
     background: darkgreen;
     justify-content: center;
     text-align: center;
