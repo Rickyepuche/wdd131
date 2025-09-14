@@ -1,10 +1,8 @@
 @media (min-width: 481px){
     .grid-container{
-        display: grid;
         grid-template-rows: 1fr;
         grid-template-columns: minmax(220px, 0.9fr) minmax(220px, 0.9fr);
         gap: 1rem;
-        justify-content: center;
     }
     body{
         max-width: none;
@@ -59,6 +57,5 @@
         grid-template-columns: minmax(200px, 360px) minmax(200px, 360px) minmax(200px, 360px);
         column-gap: 0.3rem;
         row-gap: 1.5rem;
-        justify-content: center;
     }
 }

@@ -5,12 +5,17 @@
     box-sizing: border-box;
 }
 
+:root{
+    --main-font: "Roboto", sans-serif;
+    --primary-color: darkgreen;
+}
+
 body{
     max-width: 768px;
     min-width: 250px;
 }
 nav{
-    background-color: darkgreen;
+    background-color:var(--primary-color);
     min-width: 250px;
 }
 .nav-bar{
@@ -22,7 +27,7 @@ nav{
 }
 
 h1{
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
     font-size: 2rem;
     margin-left: 1rem;
     color: white;
@@ -57,7 +62,7 @@ h1{
     color: white;
     font-weight: 700;
     transition: 0.5s;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
     font-size: clamp(1rem, 2vmin, 1.5rem);
 }
 .navigation a:hover, .navigation a:active{
@@ -84,7 +89,7 @@ h2{
     font-size: 2rem;
     padding: 10px 20px 10px 20px;
     text-align: center;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
 }
 .grid-container{
     display: grid;
@@ -106,7 +111,7 @@ figcaption{
     text-align: center;
     font-size: large;
     font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
 }
 
 
@@ -116,7 +121,7 @@ footer{
     margin-bottom: 0;
     padding-bottom: 20px;
     padding-top: 20px;
-    background: darkgreen;
+    background: var(--primary-color);
     justify-content: center;
     text-align: center;
 }
