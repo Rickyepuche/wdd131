@@ -4,6 +4,7 @@
         grid-template-rows: 1fr;
         grid-template-columns: minmax(220px, 0.9fr) minmax(220px, 0.9fr);
         gap: 1rem;
+        justify-content: center;
     }
     body{
         max-width: none;

@@ -21,7 +21,7 @@ nav{
     align-items: center;
 }
 
-.logo{
+h1{
     font-family: "Roboto", sans-serif;
     font-size: 2rem;
     margin-left: 1rem;
@@ -62,7 +62,7 @@ nav{
 }
 .navigation a:hover, .navigation a:active{
     border: 1px solid black;
-    color: darkcyan;
+    color: gray;
     font-weight: 700;
 }
 .open a{
@@ -80,7 +80,7 @@ nav{
 }
 
 /* The main */
-h1{
+h2{
     font-size: 2rem;
     padding: 10px 20px 10px 20px;
     text-align: center;
@@ -91,6 +91,7 @@ h1{
     grid-template-rows: 1fr;
     grid-template-columns: minmax(250px, 100%);
     gap: 1rem;
+    justify-content: center;
 }
 
 figure{
