@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page contains information about the country nigeria with images of their culture and heritage. It contains data about the country such as the population, land mass, currency etc. it also has a weather page that contains info about the current weather.">
+    <meta name="author" content="Richard Edigin">
+    <title>Country Page</title>
+    <link rel="preconnect" href="https://fonts.googleapiscom">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Nigeria</h1>
+    </header>
+    <main>
+        <section class="image-background">
+            <img class="small-image" src="images/Nigeria-small.webp" alt="Nigeria-culture-img">
+        </section>
+        <section class="data-page">
+            <div class="data-container">
+                <h2>Data</h2>
+                <ul>
+                    <li><div class="thick">Area</div><div class="colon">:</div> <div class="data">923,769 sq km</div></li>
+                    <li><div class="thick">Population</div><div class="colon">:</div><div class="data">230,343,389</div></li>
+                    <li><div class="thick">Capital</div> <div class="colon">:</div> <div class="data">Abuja</div></li>
+                    <li><div class="thick">Languages</div><div class="colon">:</div> <div class="data">Over 500 Languages</div></li>
+                    <li><div class="thick">Currency</div><div class="colon">:</div> <div class="data">Naira</div></li>
+                    <li><div class="thick">Time Zone</div><div class="colon">:</div><div class="data">UTC+1</div></li>
+                    <li><div class="thick">Calling Code</div> <div class="colon">:</div> <div class="data">+234</div></li>
+                    <li><div class="thick">TLD</div><div class="colon">:</div> <div class="data">.ng</div></li>
+                </ul>
+            </div>
+        </section>
+        <div></div>
+        <section class="weather-page">
+            <div class="weather-container">
+                <h2>Weather <span class="weather-emoji">🌥️</span></h2>
+                <img src="images/weather-icon.svg" alt="weather-icon">
+                <ul>
+                    <li><div class="thick">Temperature</div><div class="colon">:</div> <div class="data">15°C</div></li>
+                    <li><div class="thick">Conditions</div><div class="colon">:</div><div class="data">Cloudly</div></li>
+                    <li><div class="thick">Wind</div> <div class="colon">:</div> <div class="data">9km/h</div></li>
+                    <li><div class="thick">WindChill</div><div class="colon">:</div> <div id="wind-chill" class="data"></div></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>@<span id="currentYear"></span> Richard Edigin Benin City, Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
