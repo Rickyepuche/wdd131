@@ -68,12 +68,12 @@ ul{
 }
 .thick{
     display: inline-block;
-    font-size: 1.2rem auto;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: right;
 }
 .data{
-    font-size: 1.1rem auto;
+    font-size: 1.1rem;
     text-align: left;
 }
 .weather-page h2{
