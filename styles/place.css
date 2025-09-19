@@ -168,14 +168,7 @@ ul{
         content:"🌥️";
     }
 }
-@media (min-width: 1450px){
-    main{
-        min-height: 42rem;
-        max-height: 150rem;
-        background-image: url("../images/naija-largest2.webp");
-        object-fit: fill;
-    }
-}
+
 
 
 footer{
@@ -193,7 +186,7 @@ footer p{
     color: white;
 }
 #lastModified{
-    color: yellowgreen;
+    color: whitesmoke;
 }
 
 
