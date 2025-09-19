@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --main-color: green;
+    --main-font: "Roboto", sans-serif;
+}
 
 body{
     min-width: 250px;
     max-width: 780px;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
 }
 header{
     max-width: 48.5rem;
@@ -14,8 +18,8 @@ header{
     height: 4.6rem;
     text-align: center;
     align-content: center;
-    background: green;
-    border-bottom: 10px solid red;
+    background: var(--main-color);
+    border-bottom: 10px solid beige;
 }
 header h1{
     color: white;
@@ -28,7 +32,7 @@ header h1{
     max-width: 48.5rem;
     min-height: 25rem;
     max-height: 86.5rem;
-    border-bottom: 15px solid green;
+    border-bottom: 15px solid var(--main-color);
 }
 .image-background img{
     width: 100%;
@@ -91,9 +95,11 @@ ul{
     max-width: 20rem;
     height: auto;
 }
-.weather-emoji{
-    display: none;
-}
+
+.weather-emoji::before {
+    content: none;
+ }
+
 
 
 
@@ -114,7 +120,7 @@ ul{
         display: grid;
         grid-template-columns: 1fr 1.5fr 1fr;
         justify-content: center;
-        background-image: url("../images/naija-large.webp");
+        background-image: url("../images/naija-larger.webp");
         object-fit: fill;
     }
     .data-page{
@@ -153,13 +159,23 @@ ul{
         bottom: 5px;
         font-size: 1.5rem;
         color: white;
-        background-color: green;
+        background-color: var(--main-color);
     }
     .weather-emoji{
         display: inline-block;
     }
+    .weather-emoji::after {
+        content:"🌥️";
+    }
 }
-
+@media (min-width: 1450px){
+    main{
+        min-height: 42rem;
+        max-height: 150rem;
+        background-image: url("../images/naija-largest2.webp");
+        object-fit: fill;
+    }
+}
 
 
 footer{
@@ -167,7 +183,7 @@ footer{
     margin-bottom: 0;
     padding-bottom: 20px;
     padding-top: 20px;
-    background: green;
+    background: var(--main-color);
     justify-content: center;
     text-align: center;
 }
