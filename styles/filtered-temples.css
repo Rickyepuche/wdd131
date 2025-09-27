@@ -1,0 +1,148 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: "Roboto", sans-serif;
+    --primary-color: darkgreen;
+}
+
+body{
+    max-width: 768px;
+    min-width: 250px;
+}
+nav{
+    background-color:var(--primary-color);
+    min-width: 250px;
+}
+.nav-bar{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-family: var(--main-font);
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: white;
+}
+
+#menu{
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    color: white;
+}
+#menu::before{
+    content: "≡";
+}
+.navigation{
+    background-color: #10B981;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 760px;
+
+}
+.navigation li{
+    display: none;
+
+}
+.navigation a{
+    display: block;
+    padding: 1.3rem;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: 0.5s;
+    font-family: var(--main-font);
+    font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+.navigation a:hover, .navigation a:active{
+    border: 1px solid black;
+    color: gray;
+    font-weight: 700;
+}
+.open a{
+    display: block;
+}
+.active::before {
+    content: "!";
+}
+.show li {
+    display: block;
+}
+
+#menu.show::before{
+    content: "X";
+}
+
+/* The main */
+h2{
+    font-size: 2rem;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    font-family: var(--main-font);
+}
+.grid-container{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(250px, 100%);
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+.temple-card{
+    margin-left: 0.9rem;
+    margin-right: 0.9rem;
+    background: lightgray;
+    text-align: center;
+}
+.temple-card img{
+    width: 90%;
+    height: auto;
+    margin-top: 7px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 15px rgb(78, 77, 77);
+}
+.info h3{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--main-font);
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.info p{
+    font-family: var(--main-font);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+footer{
+    min-width: 250px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background: var(--primary-color);
+    justify-content: center;
+    text-align: center;
+}
+footer p{
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+}
+#lastModified{
+    color: yellowgreen;
+}
