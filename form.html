@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Richard Edigin">
+    <meta name="description" content="This page is a form for review about certain products. This form includes product name, rating, date of installation, useful features, written review and user name.">
+    <title>Product Review Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Selawik:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        
+        <form id="review-form" action="review.html" method="get">
+            <fieldset>
+                <label>Product Name
+                    <select name="product-name" id="products" required>
+                        <option id="product-option" value="">Select a product</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Overall Rating</legend>
+                <div class="rating-row">
+                    <div class="rating-col">
+                        <label for="rating1">1⭐</label>
+                        <input type="radio" id="rating1" name="rating" value="1" required>
+                    </div>
+                    <div class="rating-col">
+                        <label for="rating2">2⭐</label>
+                        <input type="radio" id="rating2" name="rating" value="2" required>
+                    </div>
+                    <div class="rating-col">
+                        <label for="rating3">3⭐</label>
+                        <input type="radio" id="rating3" name="rating" value="3" required>
+                    </div>
+                    <div class="rating-col">
+                        <label for="rating4">4⭐</label>
+                        <input type="radio" id="rating4" name="rating" value="4" required>
+                    </div>
+                    <div class="rating-col">
+                        <label for="rating5">5⭐</label>
+                        <input type="radio" id="rating5" name="rating" value="5" required>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label>
+                    Date of Installation
+                    <input type="date" id="date-input" name="intall-date" required>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Which features did you find useful in the product?(check all that apply)</legend>
+                <label><input type="checkbox" id="useful-checkbox" value="Durability">Durability</label>
+                <label><input type="checkbox" id="useful-checkbox" value="Ease of use">Ease of use</label>
+                <label><input type="checkbox" id="useful-checkbox" value="Performance">Performance</label>
+                <label><input type="checkbox" id="useful-checkbox" value="Design">Design</label>
+            </fieldset>
+            <fieldset>
+                <label>Written Review
+                    <textarea name="textarea" id="text-area"></textarea>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>
+                    User Name
+                    <input type="text" id="user-name" name="username">
+                </label>
+            </fieldset>
+            <fieldset>
+                <input type="submit" id="submit" name="submit" value="Post Review">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>@<span id="currentYear"></span> Richard Edigin Benin City, Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
