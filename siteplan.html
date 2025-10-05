@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Richard Edigin">
+  <title>Amebo — Site Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Merriweather:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+<body>
+    <header class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Amebo</h1>
+          <div class="tag">Tech • Culture • Science • Lifestyle — readable, relatable, curious</div>
+        </div>
+    </header>
+   
+  <main class="sheet">
+
+    <section>
+      <h2>Site Name</h2>
+      <p><strong>Amebo</strong> — a short, memorable name inspired by West African pidgin usage ("amebo" = gossip/chatter). It's ideal for a blog that mixes timely tech coverage with cultural storytelling and approachable science & lifestyle writing. It feels local, conversational, and brandable.</p>
+      <p><em>Optional domains:</em> <code>amebo.blog</code>, <code>amebo.tech</code>, <code>amebohub.com</code></p>
+    </section>
+
+    <section>
+      <h2>Site Purpose</h2>
+      <p>Amebo provides well-researched explainers, concise news rundowns, long-form cultural features, practical lifestyle guides, and accessible science pieces. Targeted content types include: feature articles, quick-read explainers, interviews, resource lists, and a weekly newsletter.</p>
+    </section>
+
+    <section>
+      <h2>Scenarios (user questions)</h2>
+      <ul class="scenarios">
+        <li>Where can I find a concise explainer about the latest smartphone OS update?</li>
+        <li>I'm researching climate tech — what beginner-friendly explainers and curated resources does Amebo offer?</li>
+        <li>Where can I find human-interest culture pieces about local creative scenes?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Color Schema</h2>
+      <p>Primary: <strong>#0b3619</strong> — used for headings, CTAs, primary buttons, and brand accents.<br>
+      Secondary / Background: <strong>#f0f0f0</strong> — used for page background and subtle card backgrounds.<br>
+      Text / Muted: <strong>#585858</strong> — used for body copy, captions, and secondary UI text.</p>
+
+      <div class="color-swatches">
+        <div class="sw primary">#0b3619</div>
+        <div class="sw bg">#f0f0f0</div>
+        <div class="sw muted">#585858</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typography</h2>
+      <p>Selected web fonts:</p>
+      <ul>
+        <li><strong>Cinzel Decorative</strong> — display headings, site brand/wordmark.</li>
+        <li><strong>Roboto</strong> — primary body text, navigation, UI elements (clean and readable).</li>
+        <li><strong>Merriweather</strong> — featured article intros, pull quotes, and bylines (adds warmth).</li>
+      </ul>
+    </section>
+    <section>
+        <h2>Wireframe Layout</h2>
+        <p>Mobile-first responsive design. Flexible grid layouts for article listings, with card-style previews on mobile and multi-column grids on larger screens.</p>
+        <p>Mobile</p>
+        <img src="images/mobile-view.png" alt="Wireframe sketches showing mobile view">
+        <p>Large screens</p>
+        <img src="images/larger-view.png" alt="Wireframe sketches showing larger view">
+        
+    </section>
+  </main>
+  <footer>
+    <p>@<span id="currentYear"></span> Richard Edigin Benin City, Nigeria</p>
+    <p id="lastModified"></p>
+</footer>
+  <script>
+        let now = new Date();
+        let year = now.getFullYear();
+        document.querySelector("#currentYear").textContent = year;
+        let date = now.toLocaleString();
+        document.querySelector("#lastModified").textContent = date;
+  </script>
+</body>
+</html>

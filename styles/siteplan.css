@@ -1,0 +1,151 @@
+:root {
+  --bg: #f0f0f0;
+  --primary: #0b3619;
+  --secondary: #f0f0f0;
+  --muted: #585858;
+  --container: 980px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--muted);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sheet {
+  max-width: var(--container);
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 15px;
+  padding-bottom: 28px;
+  box-shadow: 0 8px 30px rgba(11, 54, 25, 0.06);
+}
+
+.brand {
+  background-color: #f0f0f0;
+  padding-left: 45px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), #1b5f2b);
+  box-shadow: 0 6px 18px rgba(11, 54, 25, 0.08);
+}
+
+h1 {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--primary);
+  margin: 0;
+  font-size: 2.1rem;
+}
+
+.tag {
+  font-family: 'Merriweather', serif;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--primary);
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+p,
+li {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.sw {
+  flex: 1;
+  min-width: 80px;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+.sw.primary {
+  background: var(--primary);
+}
+
+.sw.bg {
+  background: var(--secondary);
+  color: var(--muted);
+  border: 1px solid #e6e6e6;
+}
+
+.sw.muted {
+  background: var(--muted);
+}
+
+
+ul.scenarios {
+  margin-left: 18px;
+}
+
+footer{
+    min-width: 250px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background: var(--primary);
+    justify-content: center;
+    text-align: center;
+}
+footer p{
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+}
+#lastModified{
+    color: yellowgreen;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 20px;
+  }
+
+  .sheet {
+    padding: 18px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
