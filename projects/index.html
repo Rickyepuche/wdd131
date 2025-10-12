@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/style.css">
+        <script src="/project/scripts/index.js" defer></script>
+        <title>Blog Website</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav-bar">
+                    <ul>
+                    <li  class="logo-text"><a href="/">Amebo</a></li>
+                    </ul>
+                    <a id="menu"></a>
+                    
+                </div>
+                <ul class="navigation">
+                    <li class="nav-item"><a href="/articles.html?tag=all">All articles</a></li>
+                    <li class="nav-item"><a id="culture-click" href="/articles.html?tag=culture">Culture</a></li>
+                    <li class="nav-item"><a id="lifestyle-click" href="/articles.html?tag=lifestyle">Lifestyle</a></li>
+                    <li class="nav-item"><a id="technology-click" href="/articles.html?tag=technology">Technology</a></li>
+                    <li class="nav-item" id="people"><a id="people-click" href="/articles.html?tag=people">People</a></li>
+                </ul>  
+                <div class="subscribe-button">
+                    <a href="/?scroll=subscribe">Subscribe</a>
+                </div>   
+            </nav>
+        </header>
+        <main>
+            <div class="first-section-container">
+                <div class="first-section-container-space-1"></div>
+                <div class="first-section-content">
+                    <div class="first-section-content-1"></div>
+                    <div class="first-section-content-2">
+                        <h1>Welcome to Amebo, we write about technology, people and culture</h1>
+                    </div>
+                    <div class="first-section-content-3"></div>
+                </div>
+                <div class="first-section-container-space-2"></div>
+            </div>
+            <div class="second-section-container">
+                <div class="second-section-container-space-1"></div>
+                <div class="second-section-content">
+                    <div class="second-section-content-space-upside"></div>
+                    <div class="second-section-content-main">
+                        <div class="second-section-content-main-1">
+                            <div class="second-section-content-main-1-header">
+                                <h2>Featured</h2>
+                            </div>
+                            <div class="second-section-content-main-1-content">                     
+                                <div class="second-section-content-main-1-upper">
+
+                                    <div class="second-section-content-main-1-upper-image">
+                                        <a id="upper-image-container1">
+                                        </a>
+                                    </div>
+                                    <div class="second-section-content-main-1-upper-time-stamp">
+                                        <div class="upper-time-stamp" id="upper-time-stamp1">
+                
+                                        </div>
+                                        <div class="upper-time-stamp" id="upper-time-stamp2">
+                                            
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="second-section-content-main-1-upper-content">
+                                        <div class="second-section-content-main-1-lower-content-topic" id="upper-content-topic">
+                                        
+                                        </div>
+                                        <div class="second-section-content-main-1-lower-content-description" id="upper-content-des">
+                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                    
+                                <div class="second-section-content-main-1-lower">
+                                    <div class="second-section-content-main-1-lower-image">
+                                        <a id="lower-image-container" >
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="second-section-content-main-1-lower-time-stamp">
+                                        <div class="lower-time-stamp" id="lower-time-stamp1">
+                                           
+                                        </div>
+                                        <div class="lower-time-stamp" id="lower-time-stamp2">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="second-section-content-main-1-lower-content">
+                                        <div class="second-section-content-main-1-lower-content-topic" id="lower-content-topic">
+                                            
+                                        </div>
+                                        <div class="second-section-content-main-1-lower-content-description" id="lower-content-des">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            
+                        </div>
+                        <div class="second-section-content-main-2">
+                            <div class="second-section-content-main-2-header">
+                                <h2>Recent</h2>
+                            </div>
+                            <div class="second-section-content-main-2-content">
+                                <!-- will put a for loop for looping through blog posts here later -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-section-container-space-2"></div>
+            </div>
+            <section>
+                <div class="third-section-container">
+                    <div class="third-section-container-space-1"></div>
+                    <div class="third-section-content">
+                        <div class="third-section-content-space-1"></div>
+                        <div class="third-section-content-subscribe">
+                            <div class="third-section-content-subscribe-head">
+                                <h2>Get the best sent to your<br>inbox, every month</h2>
+                            </div>
+                            <div class="third-section-content-subscribe-form">
+                                <form id="review-form" class="form">      
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                    <button class="blogForm-button" type="submit">Subscribe</button>
+                                </form>
+                                <p>once monthly, no spam</p>
+                            </div>
+                        </div>
+                        <div class="third-section-content-space-2"></div>   
+                    </div>
+                    <div class="third-section-container-space-2"></div>
+                </div>
+            </section>
+        </main>
+<footer>
+    <!-- Step 4 - Add a dynamic year to the footer using JS. -->
+     <div class="footer-container">
+        <div class="footer-space-1"></div>
+        <div class="footer-content">
+            <div class="footer-content-space-1"></div>
+            <div class="footer-main">
+                <div class="footer-main-11">
+                    <div><a href="">©Amebo 2025</a></div>
+                </div>
+                <div class="footer-main-1">
+                      <div><p>Pages</p></div>
+                      <div><a href="/">Home</a></div>
+                      <div><a href="/?scroll=subscribe">Subscribe</a></div>
+                </div>
+                <div class="footer-main-1">
+                    <div><p>Categories</p></div>
+                    <div><a href="/articles.html">Culture</a></div>
+                    <div><a href="/articles.html">People</a></div>
+                    <div><a href="/articles.html">Lifestyle</a></div>
+                </div>
+                <div class="footer-main-1">
+                  <div><p>Contact</p></div>
+                  <div><a href="https://x.com/i/flow/login?lang=en">x(Twitter)</a></div>
+                  <div><a href="https://WWW.linkedin.com/in/richard-edigin-2aa197326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></div>
+                  <div><a href="https://byui-cse.github.io/wdd131-ww-course/week06/project-description.html">Reference</a></div>
+                </div>
+            </div>
+            <div class="footer-content-space-2"></div>
+        </div>
+        <div class="footer-space-2"></div>  
+    </div>
+</footer>
+</body>
+</html>
