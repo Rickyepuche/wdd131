@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (subscribeBtn) {
         subscribeBtn.addEventListener("click", (e) => {
         if (
-            window.location.pathname === "/" ||
-            window.location.pathname === "/index.html"
+            window.location.pathname === "/projects/index.html" ||
+            window.location.pathname === "/projects/index.html"
         ) {
             // If we're already on index page, just scroll
             e.preventDefault();
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("pageName:", pageName);
     })();
 
-    fetch("./blogs.json")
+    fetch("./data/blogs.json")
         .then((response) => response.json())
         .then((data) => {
         if (!Array.isArray(data) || data.length === 0) return;
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const blogPostLast = data[last];
         const imageContainer1 = document.getElementById("upper-image-container1");
         if (imageContainer1) {
-            imageContainer1.href = `/blog.html?post=${last}`;
+            imageContainer1.href = `/projects/blog.html?post=${last}`;
             const img = document.createElement("img");
             img.src = blogPostLast.image;
             img.alt = blogPostLast.tag || "";
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (upperTopicContainer) {
             const topic = document.createElement("a");
             topic.textContent = blogPostLast.topic || "";
-            topic.href = `/blog.html?post=${last}`;
+            topic.href = `/projects/blog.html?post=${last}`;
             upperTopicContainer.appendChild(topic);
         }
         if (upperDesContainer) {
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "lower-image-container"
             );
             if (imageContainer2) {
-            imageContainer2.href = `/blog.html?post=${second}`;
+            imageContainer2.href = `/projects/blog.html?post=${second}`;
             const img = document.createElement("img");
             img.src = blogPostSecond.image;
             img.alt = blogPostSecond.tag || "";
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (lowerTopicContainer) {
             const topic = document.createElement("a");
             topic.textContent = blogPostSecond.topic || "";
-            topic.href = `/blog.html?post=${second}`;
+            topic.href = `/projects/blog.html?post=${second}`;
             lowerTopicContainer.appendChild(topic);
             }
             if (lowerDesContainer) {
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (idx < 0) continue; // safety guard
 
             const smallContainer = document.createElement("a");
-            smallContainer.href = `/blog.html?post=${idx}`;
+            smallContainer.href = `/projects/blog.html?post=${idx}`;
             smallContainer.className = "particular-article";
 
             const undersmallContainer = document.createElement("div");
@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let i = start; i >= end; i--) {
                 const blogPost = data[i];
                 const smallContainer = document.createElement("a");
-                smallContainer.href = `/blog.html?post=${i}`;
+                smallContainer.href = `/projects/blog.html?post=${i}`;
                 smallContainer.className = "main-2-content-item-container-link";
                 const undersmallContainer = document.createElement("div");
                 undersmallContainer.className = "main-2-content-item-container";
@@ -394,19 +394,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // NAV BUTTONS: navigate to articles page with tag param instead of preventing navigation
         document.querySelector("#culture-click")?.addEventListener("click", (event) => {
-            window.location.href = "/articles.html?tag=culture";
+            window.location.href = "/projects/articles.html?tag=culture";
           });
 
         document.querySelector("#lifestyle-click")?.addEventListener("click", (event) => {
-            window.location.href = "/articles.html?tag=lifestyle";
+            window.location.href = "/projects/articles.html?tag=lifestyle";
           });
 
         document.querySelector("#people-click")?.addEventListener("click", (event) => {
-                window.location.href = "/articles.html?tag=people";
+                window.location.href = "/projects/articles.html?tag=people";
             });
 
         document.querySelector("#technology-click")?.addEventListener("click", (event) => {
-                window.location.href = "/articles.html?tag=technology";
+                window.location.href = "/projects/articles.html?tag=technology";
             });
         }
 
