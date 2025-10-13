@@ -252,11 +252,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
         function showarticles(){
-            if (window.pageName === "articles") {
+            if (window.pageName === "culture") {
+                renderArticlesList(cultureArticle);
+              }
+            else if (window.pageName === "articles") {
               renderArticlesList(allArticles);
-            }
-            else if (window.pageName === "culture") {
-              renderArticlesList(cultureArticle);
             }
             else if (window.pageName === "technology") {
               renderArticlesList(technologyArticle);
