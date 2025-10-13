@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (subscribeBtn) {
         subscribeBtn.addEventListener("click", (e) => {
         if (
-            window.location.pathname === "index.html" ||
-            window.location.pathname === "index.html"
+            window.location.pathname === "projects/index.html" ||
+            window.location.pathname === "projects/index.html"
         ) {
             // If we're already on index page, just scroll
             e.preventDefault();
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const parts = path.split("/").filter(Boolean);
         if (parts.length === 0) return "home";
         const last = parts[parts.length - 1].toLowerCase();
-        if (last === "index.html" || last === "index") return "home";
+        if (last === "index.html" || last === "index") return "index";
         if (last.includes("articles")) return "articles";
         if (last.includes("subscribe")) return "subscribe";
         if (last.includes("blog")) return "blog";
@@ -170,16 +170,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const peopleArticle = allArticles.filter((post) => (post.tag || "").toLowerCase() === "people");
       const lifestyleArticle = allArticles.filter((post) => (post.tag || "").toLowerCase() === "lifestyle");
 
-      // i did this: helper to render any array of posts into the .articles container
         function renderArticlesList(postsArray) {
             const articlesContainer = document.querySelector(".articles");
             const articleHeading = document.querySelector("#article-heading");
             if (!articlesContainer) return;
 
-            // clear existing items so repeated clicks show only what we expect
             articlesContainer.innerHTML = "";
 
-            // i did this: if postsArray is empty, show a fallback message
             if (!postsArray || postsArray.length === 0) {
             if (articleHeading) articleHeading.textContent = "No articles";
             const noEl = document.createElement("p");
@@ -188,18 +185,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
             }
 
-            // i did this: set heading from first post's tag, fallback to 'Articles'
             if (articleHeading) articleHeading.textContent = postsArray[0].tag;
 
             const frag = document.createDocumentFragment();
 
-            // i did this: render newest-first (iterate from end to start)
             for (let i = postsArray.length - 1; i >= 0; i--) {
             const blogPost = postsArray[i];
 
-            // i did this: compute original index in allArticles using indexOf (simple approach you wanted)
             const idx = allArticles.indexOf(blogPost);
-            if (idx < 0) continue; // safety guard
+            if (idx < 0) continue; 
 
             const smallContainer = document.createElement("a");
             smallContainer.href = `blog.html?post=${idx}`;
@@ -255,7 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
             articlesContainer.appendChild(frag);
         }
 
-      // i did this: helper to get tag value from a link's href (returns "all" if none)
         function getTagFromHref(href) {
             try {
             const url = new URL(href, location.origin);
@@ -265,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-      // i did this: map a tag string to the corresponding array you asked for
         function arrayForTag(tag) {
             const t = (tag || "all").toLowerCase();
             if (t === "culture") return cultureArticle;
@@ -276,37 +268,30 @@ document.addEventListener("DOMContentLoaded", () => {
             return allArticles;
         }
 
-      // i did this: when we're on articles page, render based on URL param and attach listeners
         if (window.pageName === "articles") {
             const params = new URLSearchParams(location.search);
             const initialTag = (params.get("tag") || "all").toLowerCase();
             renderArticlesList(arrayForTag(initialTag));
 
-            // i did this: attach click listeners to nav links so clicks re-render on articles.html
             document.querySelectorAll(".navigation a").forEach((anchor) => {
             anchor.addEventListener("click", (ev) => {
                 ev.preventDefault();
 
-                // determine tag from href or data-attr fallback
                 const clickedTag = getTagFromHref(anchor.getAttribute("href"));
-                // i did this: update the address bar so user sees the selected tag in URL
                 history.replaceState(
                 null,
                 "",
                 `/articles.html?tag=${encodeURIComponent(clickedTag)}`
                 );
 
-                // i did this: render only the array that corresponds to clickedTag
                 renderArticlesList(arrayForTag(clickedTag));
             });
             });
         }
-      // --- end moved block ---
+    
 
-      // multiple small items
       const main2Container = document.querySelector(".second-section-content-main-2-content");
         if (main2Container) {
-            // debounce helper
             function debounce(fn, wait) {
             let t;
             return (...args) => {
@@ -316,17 +301,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             function renderSmallItems() {
-            //const num = window.innerWidth > 769 ? 8 : 5;
             let num = 8;
             if (window.innerWidth < 920 && window.innerWidth > 766) {
                 num = 5;
             }
-            // clear existing items
+
             main2Container.innerHTML = "";
 
             const frag = document.createDocumentFragment();
             const start = data.length - 3;
-            // ensure we render up to `num` items starting from `start`
             const end = Math.max(0, start - (num - 3));
             for (let i = start; i >= end; i--) {
                 const blogPost = data[i];
@@ -342,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const img = document.createElement("img");
                 img.src = blogPost.image;
                 img.alt = blogPost.tag || "";
-                img.loading = "lazy"; // Add lazy loading
+                img.loading = "lazy"; 
                 imgWrap.appendChild(img);
 
                 const tsWrap = document.createElement("div");
@@ -385,14 +368,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // initial render
         renderSmallItems();
 
-        // Articles section
-        // Article filtering arrays (used on index page for client-side filtering)
         const cultureArticle = data.filter((blogpost) => blogpost.tag === "culture");
         const lifestyleArticle = data.filter((blogpost) => blogpost.tag === "lifestyle");
         const peopleArticle = data.filter((blogpost) => blogpost.tag === "people");
         const technologyArticle = data.filter((blogpost) => blogpost.tag === "technology");
 
-        // NAV BUTTONS: navigate to articles page with tag param instead of preventing navigation
         document.querySelector("#culture-click")?.addEventListener("click", (event) => {
             window.location.href = "articles.html?tag=culture";
           });
@@ -410,7 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-      // Move blog page handling outside the main2Container check
         if (window.pageName === "blog") {
             const params = new URLSearchParams(location.search);
             const postParam = params.get("post");
@@ -420,7 +399,6 @@ document.addEventListener("DOMContentLoaded", () => {
             renderBlog(data, post);
         }
 
-      // Move renderBlog function outside as well
         function renderBlog(data, post) {
             const blogPost = data[post];
 
@@ -439,19 +417,18 @@ document.addEventListener("DOMContentLoaded", () => {
             ".main-blog-paragragh p"
             );
 
-            // guard: required container must exist
             if (!blogImageContainer || !mainBlogTopic) {
             console.error("Blog page: required DOM elements missing");
             return;
             }
 
-            // insert image safely
+        
             blogImageContainer.innerHTML = "";
             if (blogPost && blogPost.image) {
                 const blogImageEl = document.createElement("img");
                 blogImageEl.src = blogPost.image;
                 blogImageEl.alt = blogPost.tag || "";
-                blogImageEl.loading = "eager"; // Keep main blog image eager loading
+                blogImageEl.loading = "eager"; 
                 blogImageContainer.appendChild(blogImageEl);
             }
 
@@ -466,23 +443,21 @@ document.addEventListener("DOMContentLoaded", () => {
             mainBlogParagraph.textContent = blogPost.content || "";
         }
 
-        const reviewForm = document.querySelector("#review-form"); // or use your actual form class/id
+        const reviewForm = document.querySelector("#review-form"); 
         if (reviewForm) {
             let subscribeCount = parseInt(localStorage.getItem('subscribeCount')) || 0;
             
             reviewForm.addEventListener("submit", function(e) {
-                e.preventDefault(); // Prevent default form submission
+                e.preventDefault(); 
                 
                 subscribeCount++;
                 localStorage.setItem('subscribeCount', subscribeCount);
                 console.log('Subscriptions:', subscribeCount);
                 
-                // Optional: Continue with form submission
                 reviewForm.submit();
             });
         }
 
-        // For article clicks, add this where you create your article links:
         const allArticle = document.querySelectorAll('a[href*="blog.html"]');
         let clickCount = parseInt(localStorage.getItem('clickCount')) || 0;
 
