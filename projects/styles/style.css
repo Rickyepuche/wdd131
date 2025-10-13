@@ -481,6 +481,12 @@ outline: none;
     font-size: 1.5rem;
     color: var(--primary-color);
 }
+#article-head{
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
 
 .articles-second-section{
     margin-top: 30px;

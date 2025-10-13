@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (subscribeBtn) {
         subscribeBtn.addEventListener("click", (e) => {
         if (
-            window.location.pathname === "projects/index.html" ||
-            window.location.pathname === "projects/index.html"
+            window.location.pathname === "projects/project.html" ||
+            window.location.pathname === "projects/project.html"
         ) {
             // If we're already on index page, just scroll
             e.preventDefault();
@@ -51,22 +51,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const parts = path.split("/").filter(Boolean);
         if (parts.length === 0) return "home";
         const last = parts[parts.length - 1].toLowerCase();
-        if (last === "index.html" || last === "index") return "index";
+        if (last === "project.html" || last === "project") return "home";
         if (last.includes("articles")) return "articles";
-        if (last.includes("subscribe")) return "subscribe";
+        if (last.includes("culture")) return "culture";
         if (last.includes("blog")) return "blog";
+        if (last.includes("people")) return "people";
+        if (last.includes("lifestyle")) return "lifestyle";
+        if (last.includes("technology")) return "technology";
         // fallback: filename without extension
         return last.split(".")[0] || "unknown";
         }
 
     const pageName = getPageName();
 
-        // expose for scripts and CSS selectors
         document.documentElement.setAttribute("data-page", pageName);
         if (document.body) document.body.dataset.page = pageName;
         window.pageName = pageName;
 
-        // optional debug
+
         console.log("pageName:", pageName);
     })();
 
@@ -75,8 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => {
         if (!Array.isArray(data) || data.length === 0) return;
 
-        // keep existing featured + recent rendering for the index page
-        // This also handles the case when there's only one blog post
+
         const last = data.length - 1;
         const blogPostLast = data[last];
         const imageContainer1 = document.getElementById("upper-image-container1");
@@ -163,12 +164,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-      // i did this: create simple filtered arrays using array.filter so you have named arrays you asked for
-      const allArticles = data;
-      const cultureArticle = allArticles.filter((post) => (post.tag || "").toLowerCase() === "culture");
-      const technologyArticle = allArticles.filter((post) => (post.tag || "").toLowerCase() === "technology");
-      const peopleArticle = allArticles.filter((post) => (post.tag || "").toLowerCase() === "people");
-      const lifestyleArticle = allArticles.filter((post) => (post.tag || "").toLowerCase() === "lifestyle");
+      
+        const allArticles = data;
+        const cultureArticle = data.filter((post) => (post.tag || "").toLowerCase() === "culture");
+        const technologyArticle = data.filter((post) => (post.tag || "").toLowerCase() === "technology");
+        const peopleArticle = data.filter((post) => (post.tag || "").toLowerCase() === "people");
+        const lifestyleArticle = data.filter((post) => (post.tag || "").toLowerCase() === "lifestyle");
 
         function renderArticlesList(postsArray) {
             const articlesContainer = document.querySelector(".articles");
@@ -249,145 +250,97 @@ document.addEventListener("DOMContentLoaded", () => {
             articlesContainer.appendChild(frag);
         }
 
-        function getTagFromHref(href) {
-            try {
-            const url = new URL(href, location.origin);
-            return (url.searchParams.get("tag") || "all").toLowerCase();
-            } catch (e) {
-            return "all";
+      
+        function showarticles(){
+            if (window.pageName === "articles") {
+              renderArticlesList(allArticles);
+            }
+            else if (window.pageName === "culture") {
+              renderArticlesList(cultureArticle);
+            }
+            else if (window.pageName === "technology") {
+              renderArticlesList(technologyArticle);
+            }
+            else if (window.pageName === "people") {
+              renderArticlesList(peopleArticle);
+            }
+            else if (window.pageName === "lifestyle") {
+              renderArticlesList(lifestyleArticle);
             }
         }
+        showarticles();
+         
 
-        function arrayForTag(tag) {
-            const t = (tag || "all").toLowerCase();
-            if (t === "culture") return cultureArticle;
-            if (t === "technology") return technologyArticle;
-            if (t === "people") return peopleArticle;
-            if (t === "lifestyle") return lifestyleArticle;
-            // 'all' or unknown -> full array
-            return allArticles;
-        }
 
-        if (window.pageName === "articles") {
-            const params = new URLSearchParams(location.search);
-            const initialTag = (params.get("tag") || "all").toLowerCase();
-            renderArticlesList(arrayForTag(initialTag));
-
-            document.querySelectorAll(".navigation a").forEach((anchor) => {
-            anchor.addEventListener("click", (ev) => {
-                ev.preventDefault();
-
-                const clickedTag = getTagFromHref(anchor.getAttribute("href"));
-                history.replaceState(
-                null,
-                "",
-                `/articles.html?tag=${encodeURIComponent(clickedTag)}`
-                );
-
-                renderArticlesList(arrayForTag(clickedTag));
-            });
-            });
-        }
-    
-
-      const main2Container = document.querySelector(".second-section-content-main-2-content");
+        const main2Container = document.querySelector(".second-section-content-main-2-content");
         if (main2Container) {
-            function debounce(fn, wait) {
-            let t;
-            return (...args) => {
-                clearTimeout(t);
-                t = setTimeout(() => fn(...args), wait);
-            };
-            }
-
             function renderSmallItems() {
-            let num = 8;
-            if (window.innerWidth < 920 && window.innerWidth > 766) {
-                num = 5;
-            }
+                let num = 8;
+                if (window.innerWidth < 920 && window.innerWidth > 766) {
+                    num = 5;
+                }
 
-            main2Container.innerHTML = "";
+                main2Container.innerHTML = "";
 
-            const frag = document.createDocumentFragment();
-            const start = data.length - 3;
-            const end = Math.max(0, start - (num - 3));
-            for (let i = start; i >= end; i--) {
-                const blogPost = data[i];
-                const smallContainer = document.createElement("a");
-                smallContainer.href = `blog.html?post=${i}`;
-                smallContainer.className = "main-2-content-item-container-link";
-                const undersmallContainer = document.createElement("div");
-                undersmallContainer.className = "main-2-content-item-container";
-                smallContainer.appendChild(undersmallContainer);
+                const frag = document.createDocumentFragment();
+                const start = data.length - 3;
+                const end = Math.max(0, start - (num - 3));
+                for (let i = start; i >= end; i--) {
+                    const blogPost = data[i];
+                    const smallContainer = document.createElement("a");
+                    smallContainer.href = `blog.html?post=${i}`;
+                    smallContainer.className = "main-2-content-item-container-link";
+                    const undersmallContainer = document.createElement("div");
+                    undersmallContainer.className = "main-2-content-item-container";
+                    smallContainer.appendChild(undersmallContainer);
 
-                const imgWrap = document.createElement("div");
-                imgWrap.className = "main-2-content-item-image";
-                const img = document.createElement("img");
-                img.src = blogPost.image;
-                img.alt = blogPost.tag || "";
-                img.loading = "lazy"; 
-                imgWrap.appendChild(img);
+                    const imgWrap = document.createElement("div");
+                    imgWrap.className = "main-2-content-item-image";
+                    const img = document.createElement("img");
+                    img.src = blogPost.image;
+                    img.alt = blogPost.tag || "";
+                    img.loading = "lazy"; 
+                    imgWrap.appendChild(img);
 
-                const tsWrap = document.createElement("div");
-                tsWrap.className = "main-2-content-item-timestamp";
-                const ts1 = document.createElement("div");
-                ts1.className = "main-2-time-stamp";
-                ts1.textContent = blogPost.tag || "";
-                const ts2 = document.createElement("div");
-                ts2.className = "main-2-time-stamp";
-                ts2.textContent = blogPost.uniqueId || "";
-                tsWrap.appendChild(ts1);
-                tsWrap.appendChild(ts2);
+                    const tsWrap = document.createElement("div");
+                    tsWrap.className = "main-2-content-item-timestamp";
+                    const ts1 = document.createElement("div");
+                    ts1.className = "main-2-time-stamp";
+                    ts1.textContent = blogPost.tag || "";
+                    const ts2 = document.createElement("div");
+                    ts2.className = "main-2-time-stamp";
+                    ts2.textContent = blogPost.uniqueId || "";
+                    tsWrap.appendChild(ts1);
+                    tsWrap.appendChild(ts2);
 
-                const contentWrap = document.createElement("div");
-                contentWrap.className = "main-2-content-item-content";
-                const title = document.createElement("div");
-                title.className = "main-2-content-item-content-header";
-                const titleText = document.createElement("h4");
-                titleText.textContent = blogPost.topic || "";
-                title.appendChild(titleText);
-                const summary = document.createElement("div");
-                summary.className = "main-2-content-item-content-content";
+                    const contentWrap = document.createElement("div");
+                    contentWrap.className = "main-2-content-item-content";
+                    const title = document.createElement("div");
+                    title.className = "main-2-content-item-content-header";
+                    const titleText = document.createElement("h4");
+                    titleText.textContent = blogPost.topic || "";
+                    title.appendChild(titleText);
+                    const summary = document.createElement("div");
+                    summary.className = "main-2-content-item-content-content";
 
-                const summaryText = document.createElement("p");
-                summaryText.textContent = blogPost.description || "";
-                summary.appendChild(summaryText);
-                contentWrap.appendChild(title);
-                contentWrap.appendChild(summary);
+                    const summaryText = document.createElement("p");
+                    summaryText.textContent = blogPost.description || "";
+                    summary.appendChild(summaryText);
+                    contentWrap.appendChild(title);
+                    contentWrap.appendChild(summary);
 
-                undersmallContainer.appendChild(imgWrap);
-                undersmallContainer.appendChild(tsWrap);
-                undersmallContainer.appendChild(contentWrap);
+                    undersmallContainer.appendChild(imgWrap);
+                    undersmallContainer.appendChild(tsWrap);
+                    undersmallContainer.appendChild(contentWrap);
 
-                frag.appendChild(smallContainer);
-            }
+                    frag.appendChild(smallContainer);
+                }
 
-            main2Container.appendChild(frag);
+                main2Container.appendChild(frag);
             }
 
         // initial render
-        renderSmallItems();
-
-        const cultureArticle = data.filter((blogpost) => blogpost.tag === "culture");
-        const lifestyleArticle = data.filter((blogpost) => blogpost.tag === "lifestyle");
-        const peopleArticle = data.filter((blogpost) => blogpost.tag === "people");
-        const technologyArticle = data.filter((blogpost) => blogpost.tag === "technology");
-
-        document.querySelector("#culture-click")?.addEventListener("click", (event) => {
-            window.location.href = "articles.html?tag=culture";
-          });
-
-        document.querySelector("#lifestyle-click")?.addEventListener("click", (event) => {
-            window.location.href = "articles.html?tag=lifestyle";
-          });
-
-        document.querySelector("#people-click")?.addEventListener("click", (event) => {
-                window.location.href = "articles.html?tag=people";
-            });
-
-        document.querySelector("#technology-click")?.addEventListener("click", (event) => {
-                window.location.href = "articles.html?tag=technology";
-            });
+            renderSmallItems();
         }
 
         if (window.pageName === "blog") {
@@ -475,5 +428,3 @@ document.addEventListener("DOMContentLoaded", () => {
 let now = new Date();
 let year = now.getFullYear();
 document.querySelector("#currentYear").textContent = year;
-let date = now.toLocaleString();
-document.querySelector("#lastModified").textContent = date;

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Richard Edigin">
-        <meta name="description" content="This is the blog page that displays each blogs. The blog showcases article based on categories such as technology, lifestyle, culture and people. The information having been sourced from arounf the web">
+        <meta name="description" content="This is the articles page that displays articles based on categories such as technology, lifestyle, culture and people. This page lists all the articles present in the blog. The information having been sourced from around the web">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,67 +28,52 @@
                 </div>
                 <ul class="navigation">
                     <li class="nav-item"><a href="./articles.html">All articles</a></li>
-                    <li class="nav-item"><a href="./culture.html">Culture</a></li>
+                    <li class="nav-item"><a  href="./culture.html">Culture</a></li>
                     <li class="nav-item"><a  href="./lifestyle.html">Lifestyle</a></li>
                     <li class="nav-item"><a  href="./technology.html">Technology</a></li>
                     <li class="nav-item"><a href="./people.html">People</a></li>
                 </ul>  
                 <div class="subscribe-button">
-                    <a href="./project.html?scroll=subscribe">Subscribe</a>
+                    <a href="project.html?scroll=subscribe">Subscribe</a>
                 </div>   
             </nav>
         </header>
         <!-- main section -->
         <main>
-
-            <div class="blog-container">
-                <div class="blog-space-1"></div>
-                <div class="main-blog">
-                    <div class="main-blog-top">
-                        <div class="blog-top-space-1"></div>
-                        <div class="main-blog-top-content">
-                            <div class="main-blog-top-timestamp">
-                                <div><p id="main-blog-timestamp1"></p></div>
-                                <div><p id="main-blog-timestamp2"></p></div>
-                            </div>
-                            <div class="main-blog-top-stuff">
-                                <div class="main-blog-top-topic">
-                                    <h2></h2>
-                                </div>
-                                <div class="main-blog-top-description">
-                                    <h3></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-top-space-2"></div>
+            <div class="articles-first-section">
+                <div class="articles-first-section-space-1"></div>
+                <div class="first-section-content">
+                    <div class="first-section-content-space"></div>
+                    <div class="first-section-content header">
+                        <h4 id="article-heading"></h4>
                     </div>
-                    <div class="main-blog-img">
-                        
-                    </div>
-                    <div class="main-blog-bottom">
-                        <div class="main-blog-paragragh">
-                            <p class="line-breaks"></p>
-                        </div>
-                    </div>
-
+                    <div class="first-section-content-space"></div>
                 </div>
-                <div class="blog-space-2"></div>
+                <div class="articles-first-section-space-2"></div>
+            </div>
+            <div class="articles-second-section">
+                <div class="articles-second-section-space-1"></div>
+                <div class="articles">
+                    
+                    <!-- dynamically added articles will appear here -->
+                </div>
+                <div class="articles-second-section-space-2"></div>
             </div>
         </main>
         <footer>
             <!-- Step 4 - Add a dynamic year to the footer using JS. -->
-                <div class="footer-container">
+             <div class="footer-container">
                 <div class="footer-space-1"></div>
                 <div class="footer-content">
                     <div class="footer-content-space-1"></div>
                     <div class="footer-main">
                         <div class="footer-main-11">
-                            <div><a href="">©Amebo 2025</a></div>
+                            <div><a href="#">©Amebo <span id="currentYear"></span></a></div>
                         </div>
                         <div class="footer-main-1">
-                                <div><p>Pages</p></div>
-                                <div><a href="./project.html">Home</a></div>
-                                <div><a href="./project.html?scroll=subscribe">Subscribe</a></div>
+                              <div><p>Pages</p></div>
+                              <div><a href="./project.html">Home</a></div>
+                              <div><a href="./project.html?scroll=subscribe">Subscribe</a></div>
                         </div>
                         <div class="footer-main-1">
                             <div><p>Categories</p></div>
@@ -98,17 +83,17 @@
                             <div><a href="./technology.html">Technology</a></div>
                         </div>
                         <div class="footer-main-1">
-                            <div><p>Contact</p></div>
-                            <div><a href="https://x.com/i/flow/login?lang=en">x(Twitter)</a></div>
-                            <div><a href="https://WWW.linkedin.com/in/richard-edigin-2aa197326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></div>
-                            <div><a href="https://byui-cse.github.io/wdd131-ww-course/week06/project-description.html">Reference</a></div>
+                          <div><p>Contact</p></div>
+                          <div><a href="https://x.com/i/flow/login?lang=en">x(Twitter)</a></div>
+                          <div><a href="https://WWW.linkedin.com/in/richard-edigin-2aa197326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></div>
+                          <div><a href="https://byui-cse.github.io/wdd131-ww-course/week06/project-description.html">Reference</a></div>
                         </div>
                     </div>
-                    <div class="footer-content-space-2"></div>
+                    <div class="footer-content-space-2">
+                    </div>
                 </div>
                 <div class="footer-space-2"></div>  
             </div>
         </footer>
     </body>
 </html>
-
