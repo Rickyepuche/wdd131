@@ -1,4 +1,11 @@
-alert("This is my project page. Navigate to other pages using the menu or links. Note that the home link is the amebo logo at the top left. Thank you for visiting!");
+// Final Project
+if (!sessionStorage.getItem("alertShown")) {
+    alert(
+      "This is my project page. Navigate to other pages using the menu or links. Note that the home page link is the amebo logo at the top left. Thank you for visiting!"
+    );
+
+  sessionStorage.setItem("alertShown", "true");
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelector(".navigation");
@@ -32,17 +39,16 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.pathname === "projects/project.html" ||
             window.location.pathname === "projects/project.html"
         ) {
-            // If we're already on index page, just scroll
+           
             e.preventDefault();
             thirdSection?.scrollIntoView({ behavior: "smooth" });
         } else {
-            // If we're on another page, let the navigation happen
-            // The scroll will be handled after page load
+           
         }
         });
     }
 
-  // Add this to handle scroll after navigation
+//   scroll navigation
     if (window.location.search.includes("scroll=subscribe")) {
         thirdSection?.scrollIntoView({ behavior: "smooth" });
     }
@@ -88,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = document.createElement("img");
             img.src = blogPostLast.image;
             img.alt = blogPostLast.tag || "";
-            img.loading = "lazy"; // Add lazy loading
+            img.loading = "lazy"; // Added lazy loading
             imageContainer1.appendChild(img);
         }
 
@@ -132,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const img = document.createElement("img");
             img.src = blogPostSecond.image;
             img.alt = blogPostSecond.tag || "";
-            img.loading = "lazy"; // Add lazy loading
+            img.loading = "lazy"; // Added lazy loading
             imageContainer2.appendChild(img);
             }
 
@@ -211,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const img = document.createElement("img");
                 img.src = blogPost.image;
                 img.alt = blogPost.tag || "";
-                img.loading = "lazy"; // Add lazy loading
+                img.loading = "lazy"; // Added lazy loading
                 imgWrap.appendChild(img);
             }
 
