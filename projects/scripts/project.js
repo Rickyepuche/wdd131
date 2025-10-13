@@ -1,3 +1,5 @@
+alert("This is my project page. Navigate to other pages using the menu or links. Note that the home link is the amebo logo at the top left. Thank you for visiting!");
+
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelector(".navigation");
     const toggleButton = document.querySelector("#menu");
