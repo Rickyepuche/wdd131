@@ -286,6 +286,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 let num = 8;
                 if (window.innerWidth < 920 && window.innerWidth > 766) {
                     num = 5;
+                }else {
+                    num = 8;
                 }
 
                 main2Container.innerHTML = "";
