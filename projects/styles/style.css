@@ -179,7 +179,7 @@ nav{
     margin-top: 10px;
     display: grid;
     padding-top: 10px;
-    grid-template-columns: minmax(0.9rem, auto) minmax(14rem, 36rem) minmax(0.9rem, auto);
+    grid-template-columns: minmax(1rem, auto) minmax(14rem, 36rem) minmax(1rem, auto);
     grid-template-rows: minmax(8rem, 13rem);
 }
 .first-section-content{
@@ -214,7 +214,7 @@ nav{
 .second-section-container{
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: minmax(0.9rem, auto) minmax(14rem, 38rem) minmax(0.9rem, auto);
+    grid-template-columns: minmax(1rem, auto) minmax(14rem, 38rem) minmax(1rem, auto);
     grid-template-rows: auto;
     font-family: var(--font-primary);
 }
@@ -674,6 +674,7 @@ outline: none;
     display: grid;
     grid-template-columns: 1.5fr 1fr ;
     grid-template-rows: 1fr 1fr;
+    text-align: center;
 }
 .footer-main-11 a{
     font-family: var(--font-decorative);
@@ -686,6 +687,7 @@ outline: none;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr ;
     gap: 1rem;
+    text-align: center;
 }
 .footer-main-1 a{
     font-family: "Inter", "Inter Placeholder", sans-serif;
